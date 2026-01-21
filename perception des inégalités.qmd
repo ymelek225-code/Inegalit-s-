@@ -1,0 +1,1023 @@
+---
+title: \Huge \textcolor{red}{La perception des inégalités de revenus en France}
+author:
+  - "MOHAMED ELMI Ramla"
+  - "SACK Nicoletta Aniston"
+  - "YAVUZ Melek"
+  - "ZRIDETTE Adem"
+institute: "Master APE/Rise, Université Lumière Lyon 2"
+date: ""
+director: "\textcolor{red}{Sous la direction de Sylvie Charlot}"
+format: pdf
+classoption: report
+bibliography: references.bib
+header-includes:
+  - \usepackage{xcolor}
+  - \usepackage{graphicx}
+  - \usepackage{geometry}
+  - \geometry{a4paper, margin=1.5in}
+  - \usepackage{titling}
+  - \usepackage{fancyhdr}
+  - \usepackage{lipsum}
+  - \usepackage{emptypage}
+---
+
+\thispagestyle{empty}
+
+\begin{center}
+ 
+
+\LARGE Master APE/Rise\\Université Lumière Lyon 2\\[1cm]
+\Large 20 Janvier 2025\\[2cm]
+
+\textbf{\textcolor{red}{Sous la direction de Sylvie Charlot}}\\[3cm]
+
+\includegraphics[width=1\textwidth]{universite_lumiere_lyon_2_logo.png}\\[3cm]
+
+
+\end{center}
+\pagenumbering{gobble} 
+\newpage
+\pagenumbering{arabic}
+\newpage
+\begin{center}
+\textbf{\Large Remerciement}
+\end{center}
+\begin{center}
+Nous tenons à remercier Madame Sylvie Charlot pour son accompagnement, ces conseils, l'aide et le temps qu'elle nous a accordé pour la rédaction de ce rapport sur "La perception des inégalités de revenus en France" dans le cadre du cours d'Etude et Méthodologie.
+Son expérience, son analyse et sa rigueur nous ont permis d'approfondir nos réfexions et nos connaissances en économétrie.
+Grâce à ces encouragements et ces remarques constructives au fur et à mesure de l'avancée de notre rapport , nous avons pu surmonter certaines difficultés et finaliser notre tavail.
+
+\end{center}
+\newpage
+\begin{center}
+\textbf{\Large Abstract}
+\end{center}
+\begin{center}
+In a world filled with injustice and inequality, the philosophers of the Enlightenment laid the foundations for justice and equality, emphasizing equal rights and encouraging the fight against privilege. 
+Despite this historical episode, in today's France, inequality remains a striking reality, particularly when it comes to income inequality. The perception of these inequalities varies according to many factors, including social, demographic, economic and ideological ones. 
+In France, where the quest for equality is a founding value, this report aims to study the determinants of perceptions of income inequality in 2021, using data from the International Social Survey Programme (ISSP).
+With the help of a literature review and sound econometric analysis, the main aim of this report is to identify important variables that may influence people's perception and sensitivity to disparities.
+\end{center}
+\vspace{1cm}
+\begin{center}
+\textbf{\Large Résumé}
+\end{center}
+\begin{center}
+
+Dans un monde remplit d’injustices et d’inégalité les Philosophes des Lumières ont posé les bases de la justice et de l’égalité en soulignant l’égalité des droits et en encourageants la lutte contre les privilèges. 
+Malgré cet épisode historique Français, dans la France d’aujourd’hui les inégalités restent une réalité marquante en particulier pour les inégalités de revenu. La perception de ces inégalités varie en fonction de beaucoup de facteurs notamment les facteurs sociaux, démographiques, économiques et idéologiques. 
+En France la ou la quête de l’égalité est une valeur fondatrice, ce rapport vise à étudier les déterminants de la perception de ces inégalités de revenus en 2021 en utilisant des données qui proviennent de l’International Social Survey Programme (ISSP).
+À l’aide d’une revue de la littérature et d’une analyse économétrique solide, le but principal de ce rapport et de trouver les variables importantes qui peuvent influencer la perception et la sensibilité des individus face aux disparités.
+
+
+\end{center}
+\vspace{1cm}
+\newpage
+\renewcommand{\contentsname}{Table des Matières}
+
+\setcounter{tocdepth}{2}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+# Introduction
+
+Les inégalités de revenu sont un sujet important dans les débats publics, car elles jouent un rôle dans la société, l’économie et la politique. En France par son histoire, une nation où l’égalité et la justice sont très important et où l’État a un rôle central pour protéger les citoyens, ces inégalités doivent particulièrement surveillées.
+
+Même si elles existent partout dans le monde, la façon dont les gens les perçoivent dépend de plusieurs choses : leur situation financière, leurs opinions politiques ou encore le contexte dans lequel ils vivent. Cette perception influence aussi ce que les gens attendent des politiques publiques et des mesures de redistribution des richesses. C’est pourquoi il est important d’étudier ces perceptions pour mieux comprendre les tensions sociales et les choix politiques.
+
+En tant que futurs économistes, nous trouvons qu'il est essentiel d’étudier comment les individus perçoivent les inégalités de revenus en France (2021) et quels ont été les facteurs qui avaient influancé cette perception à ce moment là.
+
+Le choix de cette problématique est justifié non seulement par les particularités observées en France en matière d’inégalités mais aussi par la richesse des débats qu’elles suscitent. Selon [@INSEE2021], le niveau de vie médian en 2021 s’élevait à 23 160 euros par an, ce chiffre dissimulait des écarts significatifs entre les 10 % les plus modestes (moins de 12 290 euros) et les 10 % les plus aisés (plus de 40 500 euros). Ces disparités combinées à des réformes récentes comme la suppression de l’ISF ou la mise en place d’une flat tax (Prélèvement Forfétaire Unique, PFU), ont amplifié les discussions sur l’équité et la redistribution des révenus.
+
+Par ailleurs, le baromètre des inégalités et de la justice sociale [@IpsosCatholique2022] montrent que les Français sont parmi les plus critiques en Europe concernant les inégalités économiques. Cette sensibilité contraste avec des dynamiques observées dans d’autres pays européens, où le taux de pauvreté a diminué, alors qu’il a augmenté en France entre 2015 et 2023 d'après [@INSEE2023], passant de 13,6 % à 15,4 %. Ces singularités justifient pleinement un focus sur la France pour contextualiser l’analyse des perceptions et comprendre comment ces perceptions, influencées par divers facteurs, façonnent les préférences sociales et politiques des individus. En examinant ces aspects, notre objectif est de contribuer à une meilleure compréhension des dynamiques sociales liées aux inégalités et à l’élaboration de politiques publiques inclusives et adaptées.
+
+Nous tenterons de répondre à notre problématique en trois parties, dans un premier temps nous discuterons de ce qui a été dévoilé dans la littérature économique et dans les travaux empiriques à ce sujet. Puis nous mettrons en avant les résultats des statistiques descriptives à partir de la base de donnée que nous avons empreinté à [@issp2019]. Dans la dernière partie nous présenterons le modèle économétrique et les résultat obtenus suite à sont application sur la base de donnée. Nous tirerons enfin des conclusions à partir des résultats obtenus.
+
+\newpage
+
+# Partie I : Revue littérature
+
+Les inégalités économiques, en particulier celles liées aux revenus, font l’objet de nombreuses études. Elles sont perçues de manière différente selon les individus, et d’autres facteurs tels que les contextes sociaux et les croyances personnelles. La perception des inégalités en France a connue beaucoup de changements et est influencée non seulement par la conjoncture économique mais aussi par les débats sociaux [@forse2011]. L’augmentation des inégalités de revenu, bien qu’elle soit visible, n’est pas toujours perçue de la même façon. Les individus tendent souvent à sous-estimer les inégalités réelles, en raison de biais cognitifs comme l’ancrage, qui amène les gens à se référer à des points de départ arbitraires pour évaluer la réalité [@norton2011]. Les auteurs [@marandola2021] discutent de l’importance de l’auto-évaluation sociale des individus, des croyances sur les salaires pour différentes professions et des anticipations de la répartition des ressources entre les différents niveaux de revenu. Ils donnet une signal d'alerte contre les biais cognitifs, tels que l’ancrage et l’ajustement, qui peuvent fausser les réponses des individus. Dans une étude comparative [@norton2011], les auteurs ont démontré que les conservateurs sous-estimaient les inégalités existantes. D’autres études @donnat2009pratiques révèlent aussi des différences culturelles et géographiques dans la perception des inégalités. Les perceptions des inégalités sont également liées à la mobilité sociale perçue. Des travaux [@gimpelson2014] montrent que dans les sociétés où la mobilité sociale est perçue comme plus élevée, les individus sont plus tolérants envers les inégalités de revenu, en raison de l’attente d’une ascension sociale. Leur étude introduit le concept de "tunnel" où les perceptions de possibles améliorations futures rendent les individus plus enclins à accepter les inégalités présentes. Les idéologies politiques sont alors percues comme un facteur influencant également les perceptions des inégalités. Les auteurs [@heiserman2021] notent que les personnes ayant une idéologie libérale tendent à surestimer les inégalités, tandis que celles ayant une idéologie conservatrice les sous-estiment, les voyant comme un résultat mérité. D’autres études [@alesina2011] abordent les facteurs comme le sexe, les origines ethniques et le niveau d'éducation comme jouant un rôle prépondérant dans les préférences pour la redistribution des richesses. A cet effet, les femmes, souvent plus exposées aux inégalités, sont plus favorables à la redistribution, tandis que les hommes et les personnes plus éduquées tendent à percevoir les inégalités comme un phénomène naturel. Des chercheurs [@bavetta2019] proposent un modèle intégrant plusieurs dimensions de l’inégalité, telles que l’inégalité des résultats, des opportunités et de l’injustice. Ceci montre que les perceptions des inégalités varient en fonction des caractéristiques personnelles et contextuelles, comme la politique, l’éducation, et l’âge. Les comportements politiques et les préférences en matière de redistribution sont fortement influencés par ces perceptions. Enfin, d'autres [@knell2020] soulignent l’importance des groupes de référence dans la création des perceptions des inégalités.
+
+L’évaluation des inégalités de revenus, mesurée à travers une échelle de 1 à 6, constitue une méthode fiable pour comprendre les perceptions individuelles. Cette approche, largement validée par la littérature, met en lumière les relations entre les situations socio-économiques et la perception des inégalités [@Ravallion2000] et @alesina2005ethnic. Elle offre une base solide pour examiner les multiples facteurs qui influencent ces perceptions, lesquels interagissent pour façonner la manière dont les individus interprètent les inégalités dans leur environnement.
+
+Le niveau d’éducation, qui reflète le degré de scolarisation des individus, considéré comme un facteur pertinent, influe sur la capacité des individus à analyser et comprendre les dynamiques sociales et économiques. Une éducation plus élevée permet souvent une meilleure compréhension des inégalités, contribuant à des analyses plus nuancées [@Checchi2006]. Le sexe influence également la perception des inégalités. En raison de leurs expériences sociales et économiques distinctes, les femmes se montrent généralement plus sensibles à ces inégalités car elles vivent plus souvent des contextes d'inégalités et d'injutices [@Seguino2000]. L’âge façonne la manière dont les expériences passées et les aspirations futures influencent la perception des inégalités. Les jeunes tendent à se concentrer sur les opportunités, tandis que les aînés, avec leur recul, perçoivent plus fortement les écarts existants [@Easterlin1974]. L’état matrimonial, qui indique si une personne est célibataire, mariée, divorcée ou veuve, peut également moduler les perceptions. Des travaux montrent que les responsabilités économiques liées au mariage influencent la manière dont les individus évaluent les inégalités [@Becker1981]. La taille du ménage, qui reflète le nombre de personnes vivant ensemble, joue un rôle dans la perception des inégalités. Dans les grands ménages, les contraintes liées au partage des ressources peuvent influencer ces perceptions. Le lieu de résidence, qu’il soit urbain ou rural, est un facteur géographique qui affecte l’accès aux opportunités économiques. Les habitants des zones rurales perçoivent souvent les inégalités différemment de ceux des zones urbaines, en raison des disparités dans les infrastructures et les perspectives d’emploi. Le revenu personnel et le revenu du ménage, indicateurs économiques majeurs, façonnent directement la perception des inégalités. Les revenus élevés tendent à minimiser l’importance des écarts, tandis que les revenus modestes les rendent plus visibles et préoccupants. Le positionnement idéologique, qui reflète l’orientation politique des individus (gauche, droite, centre), influence fortement la perception des inégalités. Les personnes de gauche considèrent souvent ces écarts comme un problème sérieux nécessitant une intervention de l’État @alesina2011. La participation religieuse affecte également les perceptions. Selon leurs croyances, certains justifient les inégalités ou prônent des solutions fondées sur la charité [@alesina2011] et @guiso2006does . Le statut économique, que ce soit actif, retraité ou autre, modifie la perception des inégalités. Les retraités, par exemple, voient ces écarts comme un problème majeur, tandis que les actifs se concentrent davantage sur leur propre progression [@Piketty2014].
+
+En résumé, ces facteurs : éducation, sexe, âge, état matrimonial, taille du ménage, lieu de résidence, revenus, positionnement idéologique, participation religieuse, et statut économique s’entrelacent pour créer une structure complexe influençant la perception des inégalités de revenus. Leur analyse approfondie est cruciale pour comprendre les dynamiques sociales qui sous-tendent ces perceptions en France.
+
+\pagebreak
+
+# Partie II : Données et statistiques descriptives
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+
+# Définir un miroir CRAN pour éviter l'erreur
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+#lecture d'une base sous stata
+install.packages("haven")
+library(haven)
+setwd("/Users/ademzridette/Documents/Etude et méthodo R/RapportEM")
+data <- read_dta("/Users/ademzridette/Documents/Etude et méthodo R/RapportEM/ZA7600_v3-0-0.dta")
+View(data)
+
+
+#garder que pour FR
+
+# Filtrer uniquement les observations pour la France
+france_data <- subset(data, c_alphan == "FR")
+
+# Afficher les premières lignes pour vérifier
+head(france_data)
+
+# Vérifier le nombre total d'observations
+nrow(france_data)
+View(france_data)
+ncol(france_data)
+
+# Garder uniquement les variables qui nous interesse
+variables_to_keep <- c("TOPBOT", "v21", "SEX","MARITAL", 
+                  "FR_ETHN1", "HOMPOP", "URBRURAL","ATTEND", 
+                  "MAINSTAT", "v61","EDUCYRS", "AGE", "FR_RINC")
+
+france_data <- france_data[, variables_to_keep]
+dim(france_data)
+View(france_data)
+summary(france_data)
+
+#les echelle d'évaluation sont toute positif et les vqleur négatif représente les NA
+# Remplacer toutes les valeurs négatives par NA dans france_data
+france_data[france_data < 0] <- NA
+colSums(is.na(france_data))
+View(france_data)
+
+#je renomme les variable "v" avec leur correspondant 
+# Renommer la colonne v61 en socialclass
+colnames(france_data)[colnames(france_data) == "v61"] <- "SOCIALCLASS"
+# Renommer la colonne v21 en PERCEPTION
+colnames(france_data)[colnames(france_data) == "v21"] <- "PERCEPTION"
+colnames(france_data)
+summary(france_data)
+
+install.packages("stargazer")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("knitr")
+install.packages("tinytex")
+install.packages("haven")
+install.packages("ivreg")
+install.packages("VIM")
+library(stargazer)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(tinytex)
+library(haven)
+library(ivreg)
+library(readxl)
+library(VIM)
+install.packages("summarytools")
+library(summarytools)
+
+```
+
+Le jeu de données utilisé est "International Social Survey Programme: Social Inequality V – ISSP 2019"[@issp2019]., redistribué par le GESIS – Leibniz Institute for the Social Sciences. Cette enquête internationale, cinquième de la série sur les inégalités sociales, a été réalisée en 2019 et couvre 29 pays membres de l'ISSP. Elle vise à recueillir des données comparatives sur les perceptions et attitudes des populations concernant les inégalités sociales, la justice sociale et la mobilité sociale. Ce jeu de données est la résultante d'une enquête par questionnaires standardisés, permettant des comparaisons internationales. Parmi les variables nous avons le sexe, l’âge, le nombre d’années d’éducation, la situation professionnelle, le revenu, le groupe religieux et les préférences politiques... .
+
+Les données ont été collectées principalement par la méthode des enquêtes téléphoniques assistées par ordinateur (CATI). En tant que données transversales, cette base de données permet d’analyser la situation des individus à un moment donné et de réaliser des comparaisons internationales.
+
+```{r tbl-description-variables, echo=FALSE}
+library(knitr)
+
+# Création du tableau des variables
+variables <- data.frame(
+  Variable = c("FR_RINC", "EDUCYRS", "TOPBOT", "ATTEND", "MARITAL",
+               "PERCEPTION", "SOCIALCLASS", "FR_ETHN1", "URBRURAL", 
+               "MAINSTAT", "SEX", "HOMPOP", "AGE"),
+  Description = c("Revenu par ménages français", "Nombre d'années d'éducation",
+                  "Orientation politique", "Fréquence de pratiques religieuses",
+                  "Statut matrimonial", "Perception des inégalités",
+                  "Catégorie sociale perçue", "Origine ethnique", 
+                  "Répartition géographique", "Statut d’activité", 
+                  "Genre de l’individu", "Nombre de personnes dans le foyer", 
+                  "Âge (en années)")
+)
+
+# Générer le tableau avec une légende et une numérotation automatique
+kable(variables, caption = "Tableau 1: Description des variables", booktabs = TRUE)
+```
+
+La base de donnée etait constitué de 44975 observations ( plusieurs pays) et 357 variables differentes. Nous avons fait le choix lors de cette étude choisir uniquement les données qui concerne la France. Nous avons ensuite décidé de garder les variables mentionnée dans la littérature économique, certaines de ces variables sont continues (FR_RINC et EDUCYRS), discrètes (AGE et HOMPOP) et le reste sont définis comme catégoriques.
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+
+# Définir un miroir CRAN pour éviter l'erreur
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+#lecture d'une base sous stata
+install.packages("haven")
+library(haven)
+setwd("/Users/ademzridette/Documents/Etude et méthodo R/RapportEM")
+data <- read_dta("/Users/ademzridette/Documents/Etude et méthodo R/RapportEM/ZA7600_v3-0-0.dta")
+View(data)
+
+
+#garder que pour FR
+
+# Filtrer uniquement les observations pour la France
+france_data <- subset(data, c_alphan == "FR")
+
+# Afficher les premières lignes pour vérifier
+head(france_data)
+
+# Vérifier le nombre total d'observations
+nrow(france_data)
+View(france_data)
+ncol(france_data)
+
+# Garder uniquement les variables qui nous interesse
+variables_to_keep <- c("TOPBOT", "v21", "SEX","MARITAL", 
+                  "FR_ETHN1", "HOMPOP", "URBRURAL","ATTEND", 
+                  "MAINSTAT", "v61","EDUCYRS", "AGE", "FR_RINC")
+
+france_data <- france_data[, variables_to_keep]
+dim(france_data)
+View(france_data)
+summary(france_data)
+
+#les echelle d'évaluation sont toute positif et les vqleur négatif représente les NA
+# Remplacer toutes les valeurs négatives par NA dans france_data
+france_data[france_data < 0] <- NA
+colSums(is.na(france_data))
+View(france_data)
+
+#je renomme les variable "v" avec leur correspondant 
+# Renommer la colonne v61 en socialclass
+colnames(france_data)[colnames(france_data) == "v61"] <- "SOCIALCLASS"
+# Renommer la colonne v21 en PERCEPTION
+colnames(france_data)[colnames(france_data) == "v21"] <- "PERCEPTION"
+colnames(france_data)
+summary(france_data)
+
+install.packages("stargazer")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("knitr")
+install.packages("tinytex")
+install.packages("haven")
+install.packages("ivreg")
+install.packages("VIM")
+library(stargazer)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(tinytex)
+library(haven)
+library(ivreg)
+library(readxl)
+library(VIM)
+install.packages("summarytools")
+library(summarytools)
+
+```
+
+```{r, echo=FALSE, error=FALSE, warning=FALSE, fig.cap="Figure : Analyse des valeurs manquantes dans l'échantillon français"}
+# Analyse des données manquantes avec aggr
+Etude_frdata <- aggr(france_data,
+                     col = c('navyblue', 'red'),
+                     numbers = TRUE,
+                     sortVars = TRUE,
+                     labels = names(france_data),
+                     cex.axis = 0.7,
+                     gap = 3,
+                     ylab = c("Histogram of missing data", "Pattern"))
+```
+
+\vspace{1cm}
+
+L’histogramme révèle que certaines variables, comme FR_PRTY et FR_RINC, ont un taux élevé de données manquantes. La variable FR_RINC présente le plus grand nombre de valeurs manquantes avec 7,95% de données manquantes. EDUCYRS et TOPBOT suivent avec 4,19% et 2,82% de valeurs manquantes. Les autres variables retenus ont des valeurs manquantes mais avec une proportion plus faibles. SEX, HOMPOP et l'AGE ne contiennent aucune valeur manquante. Le Patterns plot permet d'identifier les tendances dans la répartition des valeur manquantes. Une étude approfondit pour les variables FR_RINC et EDUCYRS serait nécessaire car ils présentent un nombre élevé de valeurs manquantes.
+
+## Descriptions statistiques des variables catégoriques
+
+Avant toutes estimation économétrique, il est indispensable de comprendre nos variables et leur répartition dans l'échantillons que l'on souhaite étudier.
+
+```{r, include=FALSE}
+# Charger les packages nécessaires
+library(ggplot2)
+library(tidyr)
+attach(france_data)
+
+
+# Charger les packages nécessaires
+library(ggplot2)
+library(tidyr)
+
+library(ggplot2)
+
+library(haven)  # Pour gérer les données haven_labelled
+library(dplyr)  # Pour manipuler les données
+
+# Identifier les variables continues
+continues <- france_data[sapply(france_data, is.numeric)]
+
+# Identifier les variables avec un nombre limité de valeurs uniques
+ordinal_vars <- france_data[sapply(france_data, function(x) is.numeric(x) && length(unique(na.omit(x))) <= 11)]
+
+# Vérifier les noms des variables ordinales
+names(ordinal_vars)
+
+# Identifier les variables continues (excluant les ordinales)
+continuous_vars <- france_data[sapply(france_data, function(x) is.numeric(x) && length(unique(na.omit(x))) > 11)]
+```
+
+\vspace{1cm}
+
+```{r, include=FALSE}
+# Charger les bibliothèques nécessaires
+library(ggplot2)
+library(dplyr)
+
+# Conversion des variables en facteurs avec leurs labels corrects
+
+france_data$FR_ETHN1 <- factor(france_data$FR_ETHN1, 
+                               levels = 1:8, 
+                               labels = c("Afrique subsaharienne",
+                                          "Amérique Centrale/Sud",
+                                          "Antilles/Caraïbes",
+                                          "Asie",
+                                          "Europe",
+                                          "Maghreb",
+                                          "Sous-continent indien",
+                                          "Autre"))
+
+france_data$URBRURAL <- factor(france_data$URBRURAL, 
+                               levels = 1:5, 
+                               labels = c("Grande ville", 
+                                          "Banlieue",
+                                          "Ville moyenne ou petite",
+                                          "Village",
+                                          "Ferme ou campagne"))
+
+france_data$ATTEND <- factor(france_data$ATTEND, 
+                             levels = 1:8, 
+                             labels = c("Plusieurs fois/semaine", 
+                                        "Une fois/semaine", 
+                                        "2-3 fois/mois", 
+                                        "Une fois/mois", 
+                                        "Plusieurs fois/an", 
+                                        "Une fois/an", 
+                                        "Moins souvent", 
+                                        "Jamais"))
+
+france_data$SOCIALCLASS <- factor(france_data$SOCIALCLASS, 
+                                  levels = 1:6, 
+                                  labels = c("Classe inférieure", 
+                                             "Classe ouvrière", 
+                                             "Bas classe moyenne", 
+                                             "Milieu classe moyenne", 
+                                             "Haut classe moyenne", 
+                                             "Classe supérieure"))
+
+france_data$MAINSTAT <- factor(france_data$MAINSTAT, 
+                               levels = 1:8, 
+                               labels = c("Employé rémunéré", 
+                                          "Sans emploi ou recherche", 
+                                          "Étudiant", 
+                                          "Apprenti ou stagiaire", 
+                                          "Handicapé/incapacité de travail", 
+                                          "Retraité", 
+                                          "Femme/Homme au foyer", 
+                                          "Service militaire"))
+
+france_data$MARITAL <- factor(france_data$MARITAL, 
+                              levels = 1:6, 
+                              labels = c("Marié·e", 
+                                         "Pacsé·e", 
+                                         "Séparé·e", 
+                                         "Divorcé·e / Pacs dissout", 
+                                         "Veuf/Veuve", 
+                                         "Jamais marié·e"))
+
+france_data$PERCEPTION <- factor(france_data$PERCEPTION, 
+                                 levels = 1:5, 
+                                 labels = c("Tout à fait d'accord", 
+                                            "Plutôt d'accord", 
+                                            "Neutre", 
+                                            "Plutôt pas d'accord", 
+                                            "Pas d'accord du tout"))
+
+france_data$SEX <- factor(france_data$SEX, 
+                          levels = c(1, 2), 
+                          labels = c("Femme", "Homme"))
+
+france_data$TOPBOT <- factor(france_data$TOPBOT, 
+                             levels = 1:10, 
+                             labels = c("Extrême gauche", 
+                                        "Gauche", 
+                                        "Gauche modérée", 
+                                        "Centre-gauche", 
+                                        "Parti centriste", 
+                                        "Centre-droit", 
+                                        "Droite modérée", 
+                                        "Droite", 
+                                        "Extrême droite (9)", 
+                                        "Extrême droite (10)"))
+
+#  Fonction pour tracer des histogrammes en pourcentage
+plot_histogram <- function(data, var, title, fill_color = "skyblue") {
+  data %>%
+    count(!!sym(var)) %>%
+    mutate(percentage = (n / sum(n)) * 100) %>%
+    ggplot(aes(x = !!sym(var), y = percentage, fill = !!sym(var))) +
+    geom_bar(stat = "identity", color = "red") +  # Histogramme en pourcentage
+    geom_text(aes(label = paste0(round(percentage, 1), "%")), vjust = -0.5) +  # Ajoute les % au-dessus des barres
+    labs(title = title, x = var, y = "Pourcentage") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none") # Rotation et suppression de la légende
+}
+```
+
+```{r fig-repartition-origines, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition des origines en France"}
+plot_histogram(france_data, "FR_ETHN1", "Répartition des origines en France") +
+  labs(title = "Répartition des origines en France en 2021") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+\vspace{1cm}
+
+L'origine des individus interrogé est analysé à l'aide de la mise en place de différentes échelles d'évaluation. En effet, l'ethnie des individus est mesuré sur une echelle allant de 1 à 8. La figure 2 montre une dominance forte de la catégorie européenne dans l'échantillon est représente 90,2 % de l'échantillon. Les autre groupe sont beaucoup moins représenté avec des proportions vraiment très faible. Cette distributions montre le désequilibre dans l'échantillon. Avec cette variable, nous pouvons nous heurter à un biais d'échantillonage. Une solution pour atténuer cette effet serait de regrouper certaine catégorie. Même avec cette méthode le risque de biais persiste. L'échantillon est homogène malgres tout il existe une certaine hétérogéneité dans la groupe minoritaire. \vspace{1cm}
+
+```{r fig-repartition-geographique, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition géographique des individus en France"}
+plot_histogram(france_data, "URBRURAL", "Répartition géographique en France") +
+  labs(title = "Répartition géographique des individus en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+\vspace{1cm}
+
+La répartition géographique des individus en France dna s l'échantillon montre une concentration dans les villes moyennes ou petites (avec 35%) et les villages (avec 30,4%), ce qui montre une population qui vit majoitairement en milieu semi-urbain et rural. Les grandes villes (avec 15,3%) et les banlieues (avec 13,5%) regroupent néanmoins une part uimportante de la population, mais sont toujours moins représentées que les petites agglomérations. Seuls 5,8% des participants au questionnaires vivent en ferme ou en pleine campagne, montrant une faible domiciliation en zone rurale. La faible proportion de données manquantes (0,2%) n'impacte pas l’analyse. Cette distribution met en évidence répartiton géographique où la population se répartit de manière équilibrée entre zones urbaine et periurbaine. \vspace{1cm}
+
+```{r fig-pratique-religieuse, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition des pratiques religieuses en France"}
+plot_histogram(france_data, "ATTEND", "Répartition des pratiques religieuses en France") +
+  labs(title = "Répartition des pratiques religieuses en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+60,8% des individus déclarent ne jamais pratiquer de religion. Une part significative de la population a une pratique occasionnelle, notamment “Moins souvent” (avec 13,3%), “Une fois/an” (avec 8,9%), et “Plusieurs fois/an” (avec 9,6%), ce qui montre une implication religieuse ponctuelleet très légère.
+
+En revanche, la part des pratiquant régulier est très faible, avec seulement 2% des individus allant à un office religieux une fois par semaine et 0,8% plusieurs fois par semaine. Les pratiques du type 1 fois par mois ou 2 fois par mois restent également faibles, avec respectivement 1,9% et 1,2%. La part des variables manquantes est très faibles. Les résultats de la figure 4 confirme une tendance à la non pratique religieuse dans l'échantillon avec une part légere qui léger qui pratique mais de facçon occasionnel.
+
+```{r fig-repartition-classes-sociales, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition des classes sociales en France"}
+plot_histogram(france_data, "SOCIALCLASS", "Répartition des classes sociales en France") +
+  labs(title = "Répartition des classes sociales en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+\vspace{1cm}
+
+L’illustration proposée Figure 5 montre les « classes sociales » des répondants de notre échantillon. On constate une forte domination de la classe moyenne, puisque 44.2% se situent dans le “milieu classe moyenne”, suivi par 22.4% dans le “bas classe moyenne” et 15.9% dans le “haut classe moyenne”. Les classes “ouvrière” (12.6%) et “supérieure” (2.4%) sont peu représentées et la “classe inférieure” (1.8%) est résiduelle. Les réponses manquantes (NA) ne représentent que 0.7% de la taille de notre échantillon de 1598 répondants. Ce tableau fait apparaître que plus de trois quart des individus se disent appartenir à la classe moyenne (82.5%) alors qu’aux classes inférieure et supérieure son beaucoup moins représentées, montrant ainsi une structure sociale avec une classe moyenne prépondérante. \vspace{1cm}
+
+```{r fig-repartition-statut-matrimonial, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition du statut matrimonial en France"}
+plot_histogram(france_data, "MARITAL", "Répartition du statut matrimonial en France") +
+  labs(title = "Répartition du statut matrimonial en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+Le partage des états matrimoniaux d'apères la figure 3 montre, en France, que le statut marital est surtout représenté par les personnes mariées (51,1%), alors que 19% des personnes n’ont jamais été mariées, et qu’une part conséquente de la population n’est pas encore mariée. En termes de statuts, 11,1% des personnes déclarent être divorcées ou avoir vu leur PACS dissous, 9,2% sont pacsées. Pour ce qui est des séparés (3,4%) et des veufs/veuves (5,3%), les nombres sont relativement faibles. Enfin, les valeurs manquantes (0,9%) sont négligeables et n’entrent pas en ligne de compte dans l’analyse.En somme, ces valeurs montrent bien que notre société, si le mariage est majoritaire, voit aussi le PACS et le célibat prendre de plus en plus de place.
+
+\vspace{1cm}
+
+```{r fig-repartition-perception, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition de la perception en France"}
+plot_histogram(france_data, "PERCEPTION", "Répartition de la perception en France") +
+  labs(title = "Répartition de la perception en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+La répartition des perceptions de la question des inégalités de revenus dans la population française fait ainsi apparaître une très très large adhésion à la question « La question des inégalités est-elle forte ? », puisque 51,3 % des individus répondent y répondre totalement (et 33,6 % plutôt), soit plus de 84 % si l’on cumule les deux modalités d’adhésion. Au contraire, seulement une très modeste minorité viendrait à s’y opposer, puisque seuls 3,4 % des personnes répondent « plutôt pas d’accord » et 1,3 % « pas d’accord du tout », soit moins de 5 % d’opposition à l’institution de la question des inégalités de revenus. 9,8 % des personnes se disent neutres. Les 0,7 % d’absents à cette question ne viennent pas influer sur l’analyse. Au total, ces résultats traduisent une tendance affirmée à l’adhésion, où la très faible opposition fait signe d’un large consensus. \vspace{1cm}
+
+```{r fig-repartition-sexe, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition par sexe en France"}
+plot_histogram(france_data, "SEX", "Répartition par sexe en France", fill_color = c("pink", "lightblue")) +
+  labs(title = "Répartition par sexe en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+La répartition des sexes au sein de la population générale française fait apparaître une légère prépondérance masculine (53,7 %) par rapport aux femmes (46,3 %), la différence étant faible et pouvant traduire au premier abord un certain équilibre dans l’échantillon concerné. Mais cet écart pourrait aussi avoir des origines méthodologiques (structure de l’échantillon, biais de réponse) ; sourtout que la population générale française est plus féminine. \vspace{1cm}
+
+```{r fig-repartition-orientations-politiques, echo=FALSE, fig.width=8, fig.height=5, fig.cap="Répartition des orientations politiques en France"}
+plot_histogram(france_data, "TOPBOT", "Répartition des orientations politiques en France") +
+  labs(title = "Répartition des orientations politiques en France") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+```
+
+La distribution des préférences politiques en France montre une nette prédominance des positions centrées. En effet, le parti centriste (27,5%) est le mode d’orientation le plus répandu, suivi du centre droit (18,8%) et de la droite modérée (14,6%), traduisant une forte concentration des opinions au centre à gauche ou au centre droit. Les positions de gauche sont non négligeables, car le centre gauche représente 15,5% des opinions, la gauche modérée 10,6% et la gauche 3,3%, sans même mentionner l’échantillon (1,7%) relevant de l’extrême gauche. D’autre part, en ce qui concerne la droite, la position Plus à droite atteint 3,8%, mais les positions extrêmes (9) et (10) sont inutilisées (1,3% et 0,2%). Enfin, 2,8% d’opinions ne rentrent dans aucune modalité (NA), chiffre relativement peu fort si l’on considère qu’il ne peut causer de biais d’interprétation. Ce résultat souligne que la majorité des positions sont modérées, centrées ou légèrement à droite, les extrêmes de gauche comme de droite manquant de représentativité.
+
+\pagebreak
+
+## Descriptions statistiques des variables discrètes et continues
+
+L’approche descriptive, tant sur les variables discrètes que continues, permet d’avoir une vision d’ensemble de la distribution des données et de cerner les grandes tendances de l’échantillon dans son ensemble. Cette section présente de manière succincte les principales statistiques descriptives des variables examinées, à savoir la moyenne, l’écart-type, les quartiles et les fréquences des modalités pour les variables catégo-riales. Les statistiques descriptives, qui permettent d’examiner les variables associées aux indicateurs d’inégalités de revenus, d’éducation, d’âge, et de structure des ménages, sont présentées dans le tableau précédent. La variable HOMPOP, qui représente le nombre moyen d’individus par foyer, est de 2,5, ce qui indique que les petites tailles de ménages sont clairement prédominantes, mais que l’on trouve aussi de grands ménages, sans doute non complets. La variable EDUCYRS (nombre d’années d’éducation, pour les adultes) est à 15,86 et révèle un niveau scolaire élevé, même si une forte dispersion s’observe (écart-type de 6,93). L’âge (AGE) est en moyenne de 54,65 ans, ce qui dénote une population relativement âgée. La variable FR_RINC (revenu du ménage) présente une moyenne de 2631,36 euros par mois, mais un écart-type très important (3398,96 euros), signifiant que la répartition des revenus est particulièrement inégale entre les individus. Au final, l’examen de ces statistiques descriptives montre bien une grande hétérogénéité concernant les revenus, les niveaux d’éducation, et la structure par rapport aux ménages en général, qui joue sans doute un rôle non négligeable en influençant la perception des inégalités économiques sous-tendant les préférences pour les politiques publiques. Le diagramme en boîte du revenu des ménages présente une distribution très asymétrique, avec une forte concentration autour de la médiane et de nombreuses valeurs extrêmes à droite, ces fameux outliers , qui sont considérés comme symptomatiques d’une forte inégalité de revenu. D’un côté, on trouve de nombreux ménages ayant des revenus peu élevés, de l’autre, une petite poignée d’entre eux se retrouve dans les hauts revenus (cf. figure 10). Ce graphique permet de se représenter la distance sociale et la disparité économique existante entre les ménages, qui appelle une analyse sérieuse pour appréhender les différents mécanismes générateurs de ces écarts de revenus.
+
+```{r tbl-summary-kable, echo=FALSE, results='asis', , tbl.pos="H"}
+library(dplyr)
+library(knitr)
+
+# Sélectionner uniquement les variables numériques
+num_data <- france_data %>% select(where(is.numeric))
+
+# Calcul des statistiques descriptives
+summary_stats <- num_data %>%
+  summarise(across(everything(), list(
+    N = ~sum(!is.na(.)), 
+    Moyenne = ~mean(., na.rm = TRUE), 
+    "Écart-type" = ~sd(., na.rm = TRUE), 
+    Min = ~min(., na.rm = TRUE), 
+    Max = ~max(., na.rm = TRUE)
+  ), .names = "{.col}_{.fn}")) %>%
+  t()  # Transposer pour un affichage lisible
+
+summary_stats <- as.data.frame(summary_stats)
+
+# Générer le tableau avec kable
+kable(summary_stats, format = "latex", booktabs = TRUE, 
+      caption = "Statistiques descriptives des variables numériques",
+      caption.short = "")  # Empêche la numérotation double
+```
+
+```{r boxplot-fr-rinc, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Boîte à moustaches du revenu des ménages", fig.width=6, fig.height=8}
+library(ggplot2)
+
+ggplot(france_data, aes(y = FR_RINC)) +
+  geom_boxplot(fill = "skyblue", color = "red", outlier.shape = 16, outlier.color = "black") +
+  labs(y = "Revenu du ménage (EUR)", x = "") + 
+  theme_minimal()
+
+```
+
+```{r boxplot-educyrs, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Boîte à moustaches des années d’éducation", fig.width=6, fig.height=8}
+library(ggplot2)
+
+# Boîte à moustaches pour les années d’éducation
+ggplot(france_data, aes(y = EDUCYRS)) +
+  geom_boxplot(fill = "lightgreen", color = "darkgreen", outlier.shape = 16, outlier.color = "black") +
+  labs(y = "Années d’éducation", x = "") +  # Supprimer `title`
+  theme_minimal()
+```
+
+Les caractéristiques spécifiques, susceptibles d’alerter notre vigilance, de la boîte à moustaches de la distribution des années d'éducation (figure 11) montrent de façon évidente une asymétrie à droite puisque les valeurs sont concentrées entre 10 ans et 20 ans alors que la médiane se situe proche de la valeur 15 ce qui correspond à un niveau d’études réalisé au-delà du secondaire pour la plus grande partie de l’échantillon, mais cette information est à nuancer en raison du fait que l’effectif des outliers supérieurs à 30 de l’ordre de 5 entraînant des valeurs très loin de la médiane et atteignant 78 ne peut pas être ignoré car il s’agit sans aucun doute des individus qui ont connu de très longues études, mais qui, du fait des erreurs de saisie, se sont mal identifiés, alors qu’ailleurs on trouve dans certains cas des périodes de formation continue. Par ailleurs, le premier quartile (Q1) de 10 ans suppose, quant à lui, que certains individus ont effectué des études très limitées. La figure montre dans cette population les inégalités de l’accès à l’éducation puisque la majorité du courant a un niveau à peine modeste et que seul un assez faible pourcentage a eu un parcours long à l’académie.
+
+\pagebreak
+
+# Partie III : le modèle économétrique et analyses
+
+## Le modèle économétrique
+
+Les modèles utilisés pour mesurer la perception de l’inégalité sont généralement des modèles logit ordinal ou probit ordinal dans la littérature. Par exemple, Gimpelson et Monusova (2014)[@gimpelson2014] analysent la perception de l’inégalité en relation avec la mobilité sociale. Pour mesurer cette perception, ils utilisent une variable ordinale, comprise entre 1 et 5, qui reflète l’accord des individus avec l’idée selon laquelle les écarts entre riches et pauvres devraient être réduits. Pour modéliser ce type de variable, ces auteurs privilégient un modèle probit ordinal basé sur laméthode du maximum de vraisemblance.
+
+Un autre travail pertinent est celui de [@bavetta2019], qui étudie comment les caractéristiques individuelles influencent la perception de l’inégalité de revenu. Afin de mieux refléter cette perception, plusieurs variables dépendantes sont incluses dans le modèle selon une approche à indicateurs multiples. Étant donné que ces variables sont ordinales, les auteurs optent pour un modèle logit ordinal multivarié.
+
+Si l’on examine la structure de nos propres données, on constate que les variables sont principalement catégoriques et ordinales. En particulier, notre variable dépendante, la perception de l’inégalité de revenu, est mesurée par une évaluation de l’inégalité en France à partir de réponses à une question du type : *"Les différences de revenu en France sont trop grandes"*. Les réponses, comprises entre 1 (*tout à fait d’accord*) et 5 (*pas d’accord du tout*), en font une variable catégorique ordinale.
+
+Pour notre analyse, nous avons choisi d’utiliser un modèle logit ordinal, dont l’équation est la suivante:
+
+$$
+\ln \left( \frac{P(\text{PERCEPTION} \leq j)}{P(\text{PERCEPTION} > j)} \right) = 
+\alpha_j - \big(
+\begin{aligned}
+& \beta_1 \cdot \text{TOPBOT} +
+\beta_2 \cdot \text{SEX} +
+\beta_4 \cdot \text{FR\_ETHN1} + \\
+& \beta_5 \cdot \text{UNBRURAL} +
+\beta_6 \cdot \text{ATTEND} +
+\beta_7 \cdot \text{MAINSTAT} + \\
+& \beta_8 \cdot \text{SOCIALCLASS} +
+\beta_9 \cdot \text{HOMPOP} +
+\beta_{10} \cdot \text{EDUCYRS} + \\
+& \beta_{11} \cdot \text{AGE} +
+\beta_{12} \cdot \text{FR\_RINC}
+\end{aligned}
+\big)
+$$
+
+Le modèle logit ordonné estime la probabilité que la variable dépendante dépasse une certaine catégorie (seuil). De manière plus précise, il calculate la probabilité que la variable PERCEPTION soit supérieure ou ne soit pas supérieure à un certain seuil (c’est-à-dire par exemple « 3 »), selon les variables explicatives. Les coefficients estimés sont des grandeurs numériques qui renseignent sur la direction, la nature et l’importance des effets des variables indépendantes sur les probabilités cumulées de la variable dépendante « perception ». Dans notre échelle de perception de l’inégalité où 1 est *tout à fait d’accord* et 5 *pas d’accord du tout*, on formule les effets des coefficients comme suit :
+
+1)  Coefficient positif (+)
+
+Une hausse de la variable indépendante augmente la probabilité que l’on choisisse une catégorie inférieure (a minima “1” ou “2”). Exemple, si le coefficient de l’éducation (ANNÉE ÉDUCATION) est positif : une élévation du niveau d’éducation élève la probabilité d’appartenir à une catégorie PERCEPTION inférieure.
+
+2)  Coefficient négatif (−):
+
+Une augmentation de la variable indépendante accroît la probabilité de choisir une catégorie supérieure (par exemple, "4" ou "5").
+
+Exemple : Si le coefficient de TOPBOT (orientation politique) est négatif, cela signifie que les individus ayant une opinion politique davantage orientée à droite ont une probabilité plus élevée de se situer dans une catégorie PERCEPTION supérieure.
+
+En résumé, le modèle logit ordinal est bien adapté à notre problématique et permettra d’étudier efficacement l’effet des variables explicatives sur la perception de l’inégalité de revenu.
+
+En réunissant différente catégorie similaires tels que: Pour la variable MARITAL, il y avait 6 catégories. Une variable fictive (dummy) a été attribuée : 2 pour les personnes mariées et 1 pour celles qui ne le sont pas.
+
+Pour la variable qui représente l'origine ethnique, qui comprenait 9 catégories, une variable fictive a été attribuée : 2 pour les personnes d'origine européenne et 1 pour celles d'autres origines.
+
+Pour la variable les ville de résidences et d'activités, il y avait 5 catégories. En raison d'un manque de données, ces catégories ont été regroupées en 3 :"Une grande ville" reste inchangée. "La banlieue ou les environs d’une grande ville" et "Une ville moyenne ou petite" ont été regroupées sous la catégorie "Grande ville". "Un village" et "Une ferme ou une maison dans la campagne" ont été regroupées sous la catégorie "Village et campagne".Ces catégories ont été codées en 1, 2 et 3, et une variable fictive a été créée.
+
+Pour la variable HOMPOP, les ménages avec plus de 4 personnes ont été regroupés sous la catégorie "grande famille", et ceux avec moins de 4 personnes sous la catégorie "petite famille". Une variable fictive a été créée.
+
+Pour la variable TOPBOT, qui était basée sur une échelle de 0 à 10, les scores entre 1 et 5 ont été regroupés sous "orientation politique de gauche" et ceux entre 5 et 10 sous "orientation politique de droite". Une variable fictive (1, 2) a été attribuée.
+
+Pour la variable ATTEND, qui avait une échelle de 1 à 8, les valeurs inférieures à 4 ont été regroupées sous "personnes religieuses". Une variable fictive a été attribuée.
+
+Pour la variable SOCIALCLASS, qui comprenait une échelle de 1 à 6, les valeurs entre 1 et 3 ont été regroupées sous "classe sociale basse" et celles entre 3 et 6 sous "classe sociale élevée". Une variable fictive a été créée.
+
+Pour la variable FR_RINC, les revenus inférieurs à 2000 ont été codés comme "faible revenu", et ceux supérieurs à 2000 comme "haut revenu". Une variable fictive a été attribuée. Nous obtenons les estimations suivantes:
+
+Afin d'évaluer la qualité du modèle nous pouvons calculer le $$
+R^2_{\text{McFadden}} = 1 - \frac{\mathcal{L}(\hat{\beta})}{\mathcal{L}(\beta_0)}
+ $$
+
+```{r, include=FALSE}
+install.packages("haven")
+library(haven)  
+france_data <- read_dta("/Users/ademzridette/Documents/Etude et méthodo R/RapportEM/ZA7600_v3-0-0.dta")
+# Afficher les premières lignes pour vérifier
+head(france_data)
+
+# Vérifier le nombre total d'observations
+nrow(france_data)
+ncol(france_data)
+summary(france_data)
+
+#les echelle d'évaluation sont toute positif et les vqleur négatif représente les NA
+# Remplacer toutes les valeurs négatives par NA dans france_data
+france_data[france_data < 0] <- NA
+colSums(is.na(france_data))
+
+
+#je renomme les variable "v" avec leur correspondant 
+# Renommer la colonne v61 en socialclass
+colnames(france_data)[colnames(france_data) == "v61"] <- "SOCIALCLASS"
+# Renommer la colonne v21 en PERCEPTION
+colnames(france_data)[colnames(france_data) == "v21"] <- "PERCEPTION"
+colnames(france_data)
+summary(france_data)
+
+
+# Identifier les variables avec un nombre limité de valeurs uniques
+ordinal_vars <- c("TOPBOT", "PERCEPTION", "SEX",
+                  "ATTEND", "SOCIALCLASS", "HOMPOP", "URBRURAL", "MARITAL", "FR_ETHN1", "MAINSTAT")
+
+
+# Définir les variables ordinales
+france_data[ordinal_vars] <- lapply(france_data[ordinal_vars], function(x) {
+  factor(x, ordered = TRUE)
+})
+
+# Cadre de sous-données des variables continues 
+ordinal_data <- france_data[, ordinal_vars]
+
+str(france_data[ordinal_vars])
+
+
+
+# Identifier les variables continues (excluant les ordinales)
+
+
+
+continuous_vars <-c("EDUCYRS", "AGE", "FR_RINC")
+
+# Définir les variables numerics
+france_data[continuous_vars] <- lapply(france_data[continuous_vars], as.numeric)
+
+# Cadre de sous-données des variables ordinales
+continuous_data <- france_data[, continuous_vars]
+
+str(france_data[continuous_vars])
+
+# Vérifier les noms des variables 
+names(continuous_vars)
+names(ordinal_vars)
+
+summary(ordinal_vars)
+summary(continuous_vars)
+
+
+
+# MARITAL
+
+# Transformer la variable MARITAL en facteur avec des niveaux explicites
+france_data$MARITAL <- factor(france_data$MARITAL, 
+                              levels = c(1, 2, 3, 4, 5, 6), 
+                              labels = c("Marié·e", 
+                                         "Pacsé·e", 
+                                         "Séparé·e", 
+                                         "Divorcé·e ou Pacs dissout", 
+                                         "Veuf ou veuve", 
+                                         "Je n'ai jamais été marié·e ou pacsé·e"))
+
+# Re-coder les niveaux pour distinguer les personnes mariées des autres
+france_data$MARITAL <- ifelse(france_data$MARITAL == "Marié·e", 2, 1)
+
+# Résumé statistique de la variable MARITAL
+summary(france_data$MARITAL)
+
+# Calculer la proportion des niveaux dans MARITAL et afficher
+MARITAL_probs <- prop.table(table(na.omit(france_data$MARITAL)))
+print(MARITAL_probs)
+
+# PERCEPTION
+
+# Transformer la variable PERCEPTION en facteur ordinal avec un ordre défini
+france_data$PERCEPTION <- factor(
+  france_data$PERCEPTION,
+  levels = c(1, 2, 3, 4, 5),   
+  ordered = TRUE               
+)
+
+# Afficher la structure de la variable PERCEPTION
+str(france_data$PERCEPTION)
+
+# Résumé statistique de la variable PERCEPTION
+summary(france_data$PERCEPTION)
+
+# FR_ETHN1
+
+# Transformer la variable FR_ETHN1 en facteur avec des étiquettes explicites pour chaque origine ethnique
+france_data$FR_ETHN1 <- factor(france_data$FR_ETHN1, 
+                               levels = c(1, 2, 3, 4, 5, 6, 7, 8), 
+                               labels = c("D’Afrique subsaharienne", 
+                                          "D’Amérique Centrale ou du Sud", 
+                                          "Des Antilles ou des Caraïbes", 
+                                          "D’Asie", 
+                                          "D’Europe", 
+                                          "Du Maghreb", 
+                                          "Du sous-continent indien", 
+                                          "Autre"))
+
+# Re-coder les valeurs pour distinguer les Européens des autres groupes ethniques
+france_data$FR_ETHN1 <- ifelse(france_data$FR_ETHN1 == "D’Europe", 2, 1)
+
+# Résumé statistique de la variable FR_ETHN1
+summary(france_data$FR_ETHN1)
+
+# Calculer la proportion des niveaux dans FR_ETHN1 et afficher
+FR_ETHN1_probs <- prop.table(table((france_data$FR_ETHN1)))
+print(FR_ETHN1_probs)
+
+# Charger le package dplyr si nécessaire
+install.packages("dplyr") 
+library(dplyr)            
+
+# Transformer URBRURAL en facteur avec des étiquettes explicites pour chaque type d'habitat
+france_data$URBRURAL <- factor(france_data$URBRURAL, 
+                               levels = c(1, 2, 3, 4, 5), 
+                               labels = c("Une grande ville", 
+                                          "La banlieue ou les environs d’une grande ville", 
+                                          "Une ville moyenne ou petite", 
+                                          "Un village", 
+                                          "Une ferme ou une maison dans la campagne"))
+
+# Résumé statistique de la variable URBRURAL_GROUPED
+summary(france_data$URBRURAL_GROUPED)
+
+# Calculer la proportion des niveaux dans URBRURAL_GROUPED et afficher
+URBRURAL_GROUPED_probs <- prop.table(table((france_data$URBRURAL_GROUPED)))
+print(URBRURAL_GROUPED_probs)
+
+# Regrouper la variable URBRURAL en trois catégories : campagne, petite ville, grande ville
+france_data$URBRURAL_GROUPED <- ifelse(france_data$URBRURAL %in% c("Un village", "Une ferme ou une maison dans la campagne"),
+                                       1, 
+                                       ifelse(france_data$URBRURAL == "Une ville moyenne ou petite",
+                                              2, 
+                                              ifelse(france_data$URBRURAL %in% c("Une grande ville", "La banlieue ou les environs d’une grande ville"),
+                                                     3,
+                                                     NA)))
+
+# Transformer URBRURAL_GROUPED en facteur ordinal
+france_data$URBRURAL_GROUPED <- factor(france_data$URBRURAL_GROUPED, 
+                                       levels = c(1, 2, 3), 
+                                       labels = c("Village et campagne", 
+                                                  "Une ville moyenne ou petite", 
+                                                  "Grande ville"),
+                                       ordered = TRUE)
+
+str(france_data$URBRURAL_GROUPED)
+
+# HOMPOP
+
+# Re-coder HOMPOP pour distinguer les petites familles des grandes familles
+france_data$HOMPOP <- ifelse(france_data$HOMPOP < 4, 1, 2)
+
+# Transformer HOMPOP en facteur ordinal avec des étiquettes explicites
+france_data$HOMPOP<- factor(france_data$HOMPOP,
+                            levels = c(1, 2),
+                            labels = c("Petite famille", "Grande famille"),
+                            ordered = TRUE)
+
+# Afficher la distribution des catégories dans HOMPOP
+table(france_data$HOMPOP)
+
+# Vérifier la structure de la variable HOMPOP
+str(france_data$HOMPOP)
+
+# TOPBOT
+
+# Re-coder la variable TOPBOT pour identifier les orientations politiques (gauche, indécis, droite)
+france_data$TOPBOT <- ifelse(france_data$TOPBOT < 5, "Gauche", 
+                             ifelse(france_data$TOPBOT == 5, "Indécis", "Droite"))
+
+# Transformer TOPBOT en facteur ordinal avec un ordre explicite
+france_data$TOPBOT <- factor(france_data$TOPBOT,
+                             levels = c("Gauche", "Indécis", "Droite"),
+                             ordered = TRUE)
+
+# Vérifier la distribution des catégories dans TOPBOT
+table(france_data$TOPBOT)
+
+# Vérifier la structure de la variable TOPBOT
+str(france_data$TOPBOT)
+
+# ATTEND
+
+# Re-coder la variable ATTEND pour distinguer les croyants des non-croyants
+france_data$ATTEND <- ifelse(france_data$ATTEND <= 4, "Croyant", "Non croyant")
+
+# Transformer ATTEND en facteur ordinal avec des étiquettes explicites
+france_data$ATTEND <- factor(france_data$ATTEND,
+                             levels = c("Croyant", "Non croyant"), 
+                             ordered = TRUE)
+
+# Vérifier la distribution des catégories dans ATTEND
+table(france_data$ATTEND)
+
+# Vérifier la structure de la variable ATTEND
+str(france_data$ATTEND)
+
+# MAINSTAT
+
+# Transformer la variable MAINSTAT en facteur avec des étiquettes explicites pour chaque statut professionnel
+france_data$MAINSTAT <- factor(france_data$MAINSTAT,
+                               levels = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
+                               labels = c("Emploi rémunéré",
+                                          "Chômage en recherche d’emploi",
+                                          "Études",
+                                          "Apprentissage ou formation",
+                                          "Maladie ou handicap permanent",
+                                          "Retraité",
+                                          "Travail domestique",
+                                          "Service militaire ou communautaire obligatoire",
+                                          "Autre"))
+
+# Vérifier la structure de la variable MAINSTAT
+str(france_data$MAINSTAT)
+
+# Résumé statistique de la variable MAINSTAT
+summary(france_data$MAINSTAT)
+
+# Afficher un tableau de fréquence pour MAINSTAT
+table(france_data$MAINSTAT)
+
+# SOCIALCLASS
+
+# Re-coder la variable SOCIALCLASS pour distinguer les classes sociales (inférieure, moyenne, supérieure)
+france_data$SOCIALCLASS <- ifelse(france_data$SOCIALCLASS < 3, "Classe inférieure",
+                                  ifelse(france_data$SOCIALCLASS == 3, "Classe moyenne", "Classe supérieure"))
+
+# Transformer SOCIALCLASS en facteur ordinal avec des niveaux explicites
+france_data$SOCIALCLASS <- factor(france_data$SOCIALCLASS,
+                                  levels = c("Classe inférieure", "Classe moyenne", "Classe supérieure"), 
+                                  ordered = TRUE)
+
+# Vérifier la distribution des catégories dans SOCIALCLASS
+table(france_data$SOCIALCLASS)
+
+# Vérifier la structure de la variable SOCIALCLASS
+str(france_data$SOCIALCLASS)
+
+# FR_RINC
+
+# Vérifier la structure de la variable FR_RINC et compter les valeurs manquantes
+str(france_data$FR_RINC)
+sum(is.na(france_data$FR_RINC))
+
+# Regrouper la variable FR_RINC en deux catégories (Low, High) selon le revenu
+france_data$FR_RINC_GROUPED <- ifelse(france_data$FR_RINC > 2000, "High", "Low")
+
+# Transformer FR_RINC_GROUPED en facteur ordinal
+france_data$FR_RINC_GROUPED <- factor(france_data$FR_RINC_GROUPED,
+                                      levels = c("Low", "High"),
+                                      ordered = TRUE)
+
+# Résumé statistique de la variable FR_RINC_GROUPED
+summary(france_data$FR_RINC_GROUPED)
+
+# Vérifier la structure de la variable FR_RINC_GROUPED
+str(france_data$FR_RINC_GROUPED)
+
+# Préparation
+
+# Vérifier la structure des données et les types de variables
+str(france_data)
+
+# Transformer les variables SEX, MARITAL, FR_ETHN1, URBRURAL et HOMPOP en facteurs ordonnés
+france_data$SEX <- factor(france_data$SEX, 
+                          levels = unique(france_data$SEX), 
+                          ordered = TRUE)
+
+france_data$MARITAL <- factor(france_data$MARITAL, 
+                              levels = unique(france_data$MARITAL), 
+                              ordered = TRUE)
+
+france_data$FR_ETHN1 <- factor(france_data$FR_ETHN1, 
+                               levels = unique(france_data$FR_ETHN1), 
+                               ordered = TRUE)
+
+france_data$URBRURAL <- factor(france_data$URBRURAL, 
+                               levels = unique(france_data$URBRURAL), 
+                               ordered = TRUE)
+
+france_data$HOMPOP <- factor(france_data$HOMPOP, 
+                             levels = unique(france_data$HOMPOP), 
+                             ordered = TRUE)
+
+# Vérifier la structure des variables catégoriques transformées
+str(france_data$SEX)
+str(france_data$MARITAL)
+str(france_data$FR_ETHN1)
+str(france_data$URBRURAL)
+
+# Charger les packages nécessaires pour les modèles ordinaux
+install.packages("car")
+install.packages("carData")
+library(carData)
+library(car)
+
+# Modèle ordinal
+
+# Charger les packages nécessaires
+install.packages("ordinal")  
+library(ordinal) 
+
+# Transformer la variable PERCEPTION en facteur ordinal
+france_data$PERCEPTION <- factor(france_data$PERCEPTION, ordered = TRUE)
+
+# Ajuster un modèle ordinal pour analyser l'influence des variables indépendantes sur PERCEPTION
+model <- clm(PERCEPTION ~ FR_RINC_GROUPED + SEX + MARITAL + FR_ETHN1 + URBRURAL_GROUPED + 
+               TOPBOT + AGE + ATTEND + SOCIALCLASS + EDUCYRS + HOMPOP + 
+               SOCIALCLASS*TOPBOT + SOCIALCLASS*URBRURAL_GROUPED + AGE*MARITAL, 
+             data = france_data)
+```
+
+```{r, echo=FALSE}
+# Résumé du modèle ajusté
+summary(model)
+```
+
+```{r, echo=FALSE}
+# Calculer le pseudo-R² pour évaluer la qualité du modèle
+install.packages("pscl") 
+library(pscl)            
+pR2(model)
+```
+
+Tout d'abord, si on examine la puissance de modele en global, nous constatons que le R\^2 de McFadden du modele est de 3,25%, ce qui indique une faible capacité explicative du modele. Cependant, dans les modeles de regression logistique ordinale, des valeurs faibles de Pseudo R\^2 sont courantes, et évaluer la performance du modele uniquement sur la base du Pseudo R\^2 peut etre trompeur. La valeur de r2CU (7,80%) montre que le modele assure un ajustement relativement meilleur. Par ailleurs, la valeur de G2(97,81) indique que le modele apporte une contribution significative par rapport au modele nul. Meme si le Pseudo R\^2 est faible, la présence de variables et de coefficients significatifs soutient que le modele produit des résultats solides et pertinents.
+
+Lors de l'éxamen des résultats du modele logit multinomial ci-dessus, nous constatons que le coefficitent de la variable revenu est positif et statistiquement sifnificatif. Cela indique que, lorsque le revenu augmente, l'indice de perception augmente également. Un indice de perception élevé correspond a une perception plus faible des inégalités. En examinant le coefficient de la variable sexe, nous constatons qu'il est également positif. Cela montre que les hommes perçoivent les inégalités comme étant moindres par rapport aux femmes. pour ce qui est de l'état civil, le coefficient est également positif. Cela indique que les personnes mariées perçoivent moins d'inégalité que celles qui ne le sont pas.
+
+Concernant l'orientation politique (TOPBOT), un indice plus faible indique une orientation politique de gauche, tandis qu'un indice plus élevé indique la droite. Le coefficient de cette variable est négatif, ce qui suggere que les individus de droite perçoivent un niveau d'égalité plus élevé. Pour la variable age, le coefficient es négatif. Cela signifie que les personnes plus agées perçoivent un niveau d'inégalité plus élevé. La réligiosité (ATTEND), est mesurée a l'aide d'un indice. Un indice plus faible indique une religiosité plus forte. Le coefficient es négatif donc les individus moins religieux perçoivent un niveau d'inégalité plus élevé. Enfin le coefficient de la variable mesurant la classe sociale est positif. Cela signifie qu'appartenir a une classe sociale plus élevée entraine une perception plus faible des inéglités.
+
+Tout d'abord, si on examine la puissance de modele en global, nous constatons que le McFaddent R\^2 du modele est de 3,25%, ce qui indique une faible capacité explicative du modele. Cependant, dans les modeles de regression logistique ordinale, des valeurs faibles de Pseudo R\^2 sont courantes, et évaluer la performance du modele uniquement sur la base du Pseudo R\^2 peut etre trompeur. La valeur de r2CU (7,80%) montre que le modele assure un ajustement relativement meilleur. Par ailleurs, la valeur de G2(97,81) indique que le modele apporte une contribution significative par rapport au modele nul. Meme si le Pseudo R\^2 est faible, la présence de variables et de coefficients significatifs soutient que le modele produit des résultats solides et pertinents.
+
+Lors de l'éxamen des résultats du modele logit multinomial ci-dessus, nous constatons que le coefficitent de la variable revenu est positif et statistiquement sifnificatif. Cela indique que, lorsque le revenu augmente, l'indice de perception augmente également. Un indice de perception élevé correspond a une perception plus faible des inégalités. En examinant le coefficient de la variable sexe, nous constatons qu'il est également positif. Cela montre que les hommes perçoivent les inégalités comme étant moindres par rapport aux femmes. pour ce qui est de l'état civil, le coefficient est également positif. Cela indique que les personnes mariées perçoivent moins d'inégalité que celles qui ne le sont pas.
+
+Concernant l'orientation politique (TOPBOT), un indice plus faible indique une orientation politique de gauche, tandis qu'un indice plus élevé indique la droite. Le coefficient de cette variable est négatif, ce qui suggere que les individus de droite perçoivent un niveau d'égalité plus élevé. Pour la variable age, le coefficient es négatif. Cela signifie que les personnes plus agées perçoivent un niveau d'inégalité plus élevé. La réligiosité (ATTEND), est mesurée a l'aide d'un indice. Un indice plus faible indique une religiosité plus forte. Le coefficient es négatif donc les individus moins religieux perçoivent un niveau d'inégalité plus élevé. Enfin le coefficient de la variable mesurant la classe sociale est positif. Cela signifie qu'appartenir a une classe sociale plus élevée entraine une perception plus faible des inéglités.
+
+## Comparaison avec la revue littérature
+
+La littérature met en avant que les perceptions des inégalités varient en fonction des facteurs sociaux, économiques et idéologiques. Ces résultats sont comparables aux conclusions de notre analyse économétrique.
+
+[@forse2011] soulignent que les perceptions des inégalités en France ne dépendent pas uniquement des débats économiques et sociaux, mais aussi des biais cognitifs des individus. Nos résultats appuient cette idée, indiquant que les indiivdus a revenu élevé perçoivent les inégalités comme un probleme moins important.
+
+Selon [@Seguino2000], les femmes, en raison de leurs éxperiences plus fréquentes d'inégalités, sont plus sensibles aux différences sociales. Nos résultats montrenr que les hommes perçoivent les inégalités comme moindres par rapport aux femmes, en accord avec cette perpective.
+
+[@Easterlin1974] propose que les perceptions varient selon les attentes et les expériences des générations. Nous constatons que les jeunes perçoivent moins les inégalités par rapport aux personnes agées, ce qui est cohérent avec cette théorie.
+
+[@bavetta2019], affirment que les différences de classe jouent un role clé dans les perceptions des inégalités. Les individus des classes inférieures sont plus sensibles aux inégalités que ceux des classes supérieures. Nos résultats indiquent que les classes superieures perçoivent moins les écarts de revenus, probablement en raison de leur position avantageuse dans la hiérarchie économique.
+
+[@heiserman2021], notent que les conservateurs minimisent généralement le inégalités, tandis que les libéraux ont tendance a les exagérer. Nos résultats montrent que les individus de droite perçoivent des niveaux d'inégalités plus élevés, ce qui correspond a cette observation.
+
+[@norton2011] soulignent que les conservateurs, souvent plus religieux, perçoivent moins les inégalités.Dans notre modele, un indice plus faible (indiquenat une religiosité plus forte) est associé a une percepiton plus faible des inégalités, confirmant cette hypothese.
+
+[@Becker1981] affirme que le mariage influence la perception des inégalités. Dans notre modele, le coefficient pour la variable mariage est positif. Cela peut etre attribué au fait que les couples mariés combinent leurs revenus, réduisant ainsi l'impact perçu des inégalités.
+
+Ces résultats montrent que nos analyses économétriques s'inscrivent dans uen continuité avec les conclusion de la littérature existante.
+
+\pagebreak
+
+# Conclusions
+
+En résumé, notre analyse économetrique des perceptions des inégalités met en lumière des liens significatifs entre divers facteurs sociaux, économiques et idéologiques, et la manière dont les individus perçoivent les inégalités. Les résultats montrent que des variables telles que le revenu, le sexe, l'Age, l'état civil, la classe sociale, l'orientation politique et la religiosité jouent un role clé dans la formation de ces perceptions. Ces conlusions confirment les observations issues de la littérature existante. Les individus à revenu elevé, les hommes, les personnes et les membres des classes sociales supérieures perçoivent les inégalités moins importantes en France. En revanche, les personnes plus agées, celles ayant une orientation politique de gauche ou celles étant moins religieuses sont plus sensibles aux inégalités. Ces différences reflètent les dynamiques sociales et économiques complexes qui influencent la perceptions des inégalités dans la société. En intégrant ces dimensions, notre étude apporte une comphérension plus complète de la manière dont les inégalités sont perçues et de leurs implications sur les politiques publiques visant a réduire les écarts sociaux et économiques.
+
+Cependant, dans quelle mesure des politiques publiques adaptées pourraient-elles transformer les perceptions des inégalités et favoriser une société plus équitable ?
+
+\pagebreak
+
+# Références:
